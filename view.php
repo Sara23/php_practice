@@ -15,18 +15,15 @@
 
 <body>
     <ul>
+        <?php foreach ($tasks as $task): ?>
         <li>
-            <strong>Title: </strong><?= $task['title'] ?>
+            <?php if ($task->is_complete()): ?>
+                <strike><?=$task->description?></strike>
+            <?php else: ?>
+                <?=$task->description?>
+            <?php endif;?>
         </li>
-        <li>
-            <strong>Due: </strong><?= $task['due'] ?>
-        </li>
-        <li>
-            <strong>Responsable: </strong><?= $task['assigned_to'] ?>
-        </li>
-        <li>
-            <strong>Status: </strong><?= $task['completed'] ? 'Completed':'Incompleted' ?>
-        </li>
+        <?php endforeach; ?>
     </ul>
 </body>
 </html>

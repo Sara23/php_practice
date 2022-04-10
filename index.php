@@ -1,23 +1,31 @@
 <?php
-require 'functions.php';
-
-$task = [
-    'title' => 'Build a portifolio',
-    'due' => '10/04/2022',
-    'assigned_to' => 'Sara',
-    'completed' => false
-];
-$people = [13, 25, 2, 68, 121, 20, 21, 22, 18];
 
 
-foreach ($people as $age){
-    if(checkAge($age)){
-        echo "Allowed, you are welcome!";
-    } else{
-        echo "Sorry, you are not allowed.";
+class Task {
+    public $description;
+    public $completed = false;
+
+    public function __construct($description){
+        $this->description = $description;
     }
-    echo "\r\n";
+
+    public function complete() {
+        $this->completed = true;
+    }
+
+    public function is_complete(){
+        return $this->completed;
+    }
 }
+
+$tasks = [
+    new Task('Start a project'),
+    new Task('Do the groceries'),
+    new Task('Clean the house'),
+    new Task('Do the homework')
+];
+
+$tasks[2]->complete();
 
 
 require 'view.php';
