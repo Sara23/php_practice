@@ -14,6 +14,12 @@
 </head>
 
 <body>
+    <nav>
+        <ul>
+            <li><a href="/views/about.php">About Page</a> </li>
+            <li><a href="/views/contact.php">Contact Page</a> </li>
+        </ul>
+    </nav>
     <ul>
         <?php foreach ($tasks as $task): ?>
         <li>
