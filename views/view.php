@@ -1,15 +1,14 @@
 <?php require ('partials\head.php'); ?>
-    <h1>My Tasks: </h1>
-    <ul>
-        <?php foreach ($tasks as $task): ?>
-        <li>
-            <?php if ($task->is_complete()): ?>
-                <strike><?=$task->description?></strike>
-            <?php else: ?>
-                <?=$task->description?>
-            <?php endif;?>
-        </li>
-        <?php endforeach; ?>
-    </ul>
+    <h1>Add a new task: </h1>
+    <form method="post" action="/names">
+        <label>
+            <input type="text" name="name" id="name">
+            <button type="submit">Submit</button>
+        </label>
+    </form>
+
+    <?php foreach ($users as $user): ?>
+        <li><?= $user->name; ?></li>
+    <?php endforeach; ?>
 
 <?php require ('partials\footer.php'); ?>
