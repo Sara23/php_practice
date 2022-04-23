@@ -1,14 +1,5 @@
 <?php require ('partials\head.php'); ?>
-    <h1>Add a new task: </h1>
-    <form method="post" action="/names">
-        <label>
-            <input type="text" name="name" id="name">
-            <button type="submit">Submit</button>
-        </label>
-    </form>
 
-    <?php foreach ($users as $user): ?>
-        <li><?= $user->name; ?></li>
-    <?php endforeach; ?>
+    <h1>Home page </h1>
 
 <?php require ('partials\footer.php'); ?>
